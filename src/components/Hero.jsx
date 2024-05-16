@@ -1,11 +1,13 @@
 "use client";
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Experience from "./helper/Experience";
 import { motion } from "framer-motion";
 import { useProgress } from "@react-three/drei";
 import { container } from "./helper/motion";
+import { LanguageContext } from "@/context/LoadingContext";
+import { hero } from "@/data/hero";
 
 const subtitle = ["Full Stack Developer", "3D Enthusiast", "Coffee Aficionado"];
 
@@ -17,6 +19,9 @@ function Hero() {
     const { progress } = useProgress();
     const [loaded, setLoaded] = useState(false);
 
+    const {language} = useContext(LanguageContext);
+    console.log(language);
+
     useEffect(() => {
         if (progress >= 100) {
             setLoaded(true);
@@ -24,13 +29,10 @@ function Hero() {
     }, [progress]);
 
     return (
-        <section
-            className="max-w-[1280px] border-b border-zinc-600 
-        my-24 lg:my-30 mx-auto px-5 pb-20 h-full"
-        >
+        <section className=" w-full h-full">
             <div
                 id="hero-container"
-                className="flex flex-wrap lg:flex-row flex-col items-center"
+                className="flex flex-wrap lg:flex-row flex-col items-center justify-center my-10"
             >
                 <div id="hero-text-wrapper" className="w-full lg:w-1/2">
                     <div className="flex flex-col items-center lg:items-start">
@@ -38,7 +40,7 @@ function Hero() {
                             variants={container(0)}
                             initial="hidden"
                             animate="visible"
-                            className="text-center lg:text-left text-4xl lg:text-6xl font-thin tracking-tight lg:mt-16 text-zinc
+                            className="text-center lg:text-left text-5xl lg:text-6xl font-thin tracking-tight lg:mt-16 text-zinc
                             -100 w-full overflow-hidden"
                         >
                             Karsten Tauchert
@@ -66,23 +68,7 @@ function Hero() {
                             animate="visible"
                             id="hero-text"
                         >
-                            Welcome to my digital playground! I’m a developer
-                            who thrives on turning ideas into reality. Whether
-                            it’s crafting elegant web applications or
-                            experimenting with 3D elements, I’m always up for a
-                            creative challenge. Starting with a blank canvas is
-                            both exhilarating and daunting. But that’s where the
-                            magic happens! Whether it’s a simple website or a 3D
-                            scene, I love transforming emptiness into something
-                            beautiful. Blender is my playground for 3D
-                            creativity. Let’s bring that third dimension to the
-                            browser! My go-to tools and frameworks include
-                            React, Next.js, Tailwind CSS, and React Three Fiber.
-                            And of course, no coding session is complete without
-                            a cup of coffee by my side. Feel free to explore my
-                            projects, drop me a message, or let’s grab a virtual
-                            coffee! ☕ Let’s build something amazing together!
-                            🚀✨
+                            {hero[language].text}
                         </motion.p>
                     </div>
                 </div>
@@ -114,6 +100,7 @@ function Hero() {
                     </motion.div>
                 </div>
             </div>
+            <div className="w-1/2 h-1 border-b mt-20 border-dashed border-zinc-600 mx-auto"></div>
         </section>
     );
 }

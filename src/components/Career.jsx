@@ -1,22 +1,24 @@
-import { experiences_de } from "@/data/experience";
+import { LanguageContext } from "@/context/LoadingContext";
+import { experiences } from "@/data/experience";
 // import React from "react";
 import {motion} from 'framer-motion';
+import { useContext } from "react";
 
 function Career() {
+    const {language} = useContext(LanguageContext);
     return (
         <section
             id="career-experience"
-            className="max-w-[1280px] border-b border-zinc-600 
-        my-20 lg:my-30 mx-auto px-5 pb-20 h-full text-lg"
+            className="mx-auto px-5 h-full text-lg my-10"
         >
-            <h2 className="my-24 text-center text-4xl text-orange-600 text-bold uppercase tracking-wider">
+            <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
                 Experience
             </h2>
             <div className="experience-container">
-                {experiences_de.map((experience, index) => (
+                {experiences[language].experiences.map((experience, index) => (
                     <article
                         key={`exp-item-${index}`}
-                        className="flex flex-wrap mb-8 lg: justify-center"
+                        className="flex flex-wrap mb-8 lg:justify-center"
                     >
                         <div className="w-full lg:w-1/4">
                             <p
@@ -32,13 +34,13 @@ function Career() {
                                 opacity: 1,
                             }}
                             initial={{
-                                x: 100,
+                                x: 50,
                                 opacity: 0,
                             }}
                             transition={{
                                 duration: 1.5,
                             }}
-                            className="w-full lg:w-3/4 mb-10"
+                            className="w-full lg:w-3/4"
                         >
                             <h6
                                 aria-labelledby="role"
@@ -74,9 +76,11 @@ function Career() {
                                 ))}
                             </p>
                         </motion.div>
+                        
                     </article>
                 ))}
             </div>
+            <div className="w-1/2 h-1 border-b mt-20 border-dashed border-zinc-600 mx-auto"></div>
         </section>
     );
 }

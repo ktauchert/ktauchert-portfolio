@@ -1,26 +1,19 @@
 import Image from "next/image";
 import profilePic from "/public/images/profile_pic.jpg";
 import { motion } from "framer-motion";
+import { about } from "@/data/about";
+import { useContext } from "react";
+import { LanguageContext } from "@/context/LoadingContext";
 
 function About() {
+    const {language} = useContext(LanguageContext);
     return (
-        <section className="max-w-[1280px] h-full w-full border-b border-zinc-600 mx-auto px-5 pb-10">
-            <h2 className="my-24 text-center text-4xl text-orange-600 text-bold uppercase tracking-wider">
-                About{" "}
-                <motion.span
-                    whileInView={{
-                        opacity: 1,
-                    }}
-                    initial={{
-                        opacity: 0,
-                    }}
-                    transition={{
-                        duration: 1,
-                    }}
-                    className="text-orange-400"
-                >
-                    Me
-                </motion.span>
+        <section className="h-full border-zinc-600 mx-auto px-5 my-10">
+            <h2 className="text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
+                {about[language].title[0]}{" "}
+                <span className="text-orange-400">
+                    {about[language].title[1]}
+                </span>
             </h2>
             <div className="flex flex-wrap justify-center items-center">
                 <motion.div
@@ -29,11 +22,11 @@ function About() {
                         opacity: 1,
                     }}
                     initial={{
-                        x: -100,
+                        x: -50,
                         opacity: 0,
                     }}
                     transition={{ duration: 1, delay: 0 }}
-                    className="w-full lg:w-1/2 flex justify-center items-center mb-20"
+                    className="w-full lg:w-1/3 flex justify-center items-center mb-20"
                 >
                     <Image
                         src={profilePic}
@@ -47,37 +40,19 @@ function About() {
                         opacity: 1,
                     }}
                     initial={{
-                        x: 100,
+                        x: 50,
                         opacity: 0,
                     }}
                     transition={{ duration: 1, delay: 0 }}
-                    className="w-full lg:w-1/2"
+                    className="w-full lg:w-2/3"
                 >
-                    <div className="flex">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        At impedit eligendi ex ab! Labore ex cupiditate soluta
-                        natus dolores harum earum, atque aliquid eius
-                        repudiandae alias, quas error libero sint. Iusto,
-                        doloremque. Quidem adipisci asperiores id nam magnam
-                        placeat officia cumque est provident rem error
-                        voluptatum, alias sunt sit totam at sint saepe,
-                        voluptatum a alias illo obcaecati quidem placeat quasi
-                        voluptatem debitis odio. Nulla eos voluptatum nam?
-                        Soluta ipsam facere nisi quae enim pariatur veniam, fuga
-                        consectetur obcaecati similique eius minus? Accusamus
-                        facere laborum deserunt, est, magni atque veritatis
-                        perspiciatis ratione distinctio dolore fugit laudantium
-                        optio omnis! Tenetur amet perferendis, rem quia, saepe
-                        nobis a suscipit blanditiis, hic explicabo ducimus?
-                        Atque reiciendis dolore eos nulla corrupti cupiditate
-                        incidunt maxime doloremque impedit? Error alias
-                        cupiditate eos in aliquid. Dolorum eligendi impedit
-                        fugit a laborum commodi eaque quaerat voluptas magnam,
-                        doloribus velit saepe accusantium quas cum? Quibusdam
-                        unde omnis ipsum odio maiores assumenda, impedit nulla
-                        fugiat repellat aliquam debitis.
+                    <div className="flex flex-col">
+                        {about[language].text.map((paragraph, idx) => (
+                            <p key={`par-${idx}`}>{paragraph}</p>
+                        ))}
                     </div>
                 </motion.div>
+                <div className="w-1/2 h-1 border-b mt-20 border-dashed border-zinc-600"></div>
             </div>
         </section>
     );

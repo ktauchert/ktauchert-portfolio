@@ -1,50 +1,46 @@
 "use client";
+import { LanguageContext } from "@/context/LoadingContext";
 import { contact } from "@/data/contact";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { RiMailLine } from "react-icons/ri";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { RiDownload2Line } from "react-icons/ri";
 
 function Contact() {
+    const {language} = useContext(LanguageContext);
     return (
-        <section
-            id="contact"
-            className="max-w-[1280px] h-full w-full border-b border-zinc-600 mx-auto px-5 pb-10"
-        >
-            <h2 className="my-24 text-center text-4xl text-orange-600 text-bold uppercase tracking-wider">
-                Contact Me
+        <section id="contact" className=" h-full w-ful mx-auto px-5 my-16">
+            <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-10">
+                {contact[language].title}
             </h2>
             <div className="flex flex-wrap justify-center items-center">
                 <div className="mx-auto">
                     <p title="Name">
-                        <span className="text-xl">
+                        <span className="text-2xl">
                             <RiAccountCircleLine className="inline mr-10" />
-                            {contact.name}
+                            {contact[language].name}
                         </span>
                     </p>
                     <p className="my-3">
-                        <span className="text-xl">
-                            <RiMailLine
-                                className="inline mr-10"
-                                title="E-Mail"
-                            />
+                        <span className="text-xl hover:text-orange-600 text-cyan-600">
                             <Link
                                 href={
                                     "mailto:developer@ktauchert.de?subject=Nachricht%20vom%20Portfolio&body=Hallo%20Karsten%2C%0D%0A%0D%0A"
                                 }
                             >
-                                {contact.email}
+                                <RiMailLine
+                                    className="inline mr-10"
+                                    title="E-Mail"
+                                />
+                                {contact[language].email}
                             </Link>
                         </span>
                     </p>
                     <p>
                         <span className="text-xl">
-                            <RiDownload2Line
-                                className="inline mr-10"
-                                title="CV-Download"
-                            />
                             <Link
+                                className="hover:text-orange-600 text-cyan-600"
                                 href={"/files/CV_Karsten_Tauchert_Web_Dev.pdf"}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -52,6 +48,10 @@ function Contact() {
                                 download
                                 title="Download CV"
                             >
+                                <RiDownload2Line
+                                    className="inline mr-10 "
+                                    title="CV-Download"
+                                />
                                 Download CV
                             </Link>
                         </span>

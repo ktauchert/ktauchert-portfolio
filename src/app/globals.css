@@ -7,3 +7,19 @@
         @apply scroll-smooth;
     }
 }
+
+#impressum p {
+    margin: 5px 0;
+}
+#impressum h1, 
+#impressum h2{
+    margin: 5px 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+#impressum h3,
+#impressum h4 {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+}

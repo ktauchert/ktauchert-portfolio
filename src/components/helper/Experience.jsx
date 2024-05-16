@@ -12,16 +12,16 @@ const Light = () => {
         <>
             <directionalLight
                 ref={dirLight}
-                // castShadow
-                position={[3, 3, 4]}
-                shadow-mapSize={[2048, 2048]}
+                castShadow
+                position={[1, 2, 0.75]}
+                shadow-mapSize={[1024, 1024]}
                 target-position={[0, 1, 0.5]}
                 color="#dde"
-                intensity={3}
+                intensity={5}
             >
                 <orthographicCamera
                     attach="shadow-camera"
-                    args={[-5, 5, 5, -5]}
+                    args={[-2, 2, 2, -2]}
                 />
             </directionalLight>
         </>
@@ -39,34 +39,31 @@ function Experience() {
                 position: [3.8, 1.7, 2.8],
             }}
         >
-                {/* <SoftShadows size={15} /> */}
-                {/* <OrbitControls /> */}
-                <Environment
-                    files={"/images/satara_night_no_lamps_1k.hdr"}
-                    blur
-                />
-                {/* <axesHelper args={[5]} /> */}
-                <pointLight
-                    position={[0.75, 2, -2]}
-                    intensity={2}
-                    color="#fefecf"
-                    // castShadow
-                />
-                <Light />
+            {/* <SoftShadows size={5} /> */}
+            {/* <OrbitControls /> */}
+            <Environment files={"/images/satara_night_no_lamps_1k.hdr"} blur />
+            {/* <axesHelper args={[5]} /> */}
+            <pointLight
+                position={[0.75, 2, -2]}
+                intensity={2}
+                color="#fefecf"
+                // castShadow
+            />
+            <Light />
 
-                <group position={[-0.4, -0.25, -0.4]}>
-                    <group rotation-y={Math.PI * 0.125} receiveShadow>
-                        <Scene />
-                    </group>
-                    <group
-                        position={[1.25, 0.053, 0.75]}
-                        scale={0.6}
-                        rotation-x={-Math.PI * 0.5}
-                        rotation-z={-Math.PI * 0.375}
-                    >
-                        <Avatar />
-                    </group>
+            <group position={[-0.4, -0.25, -0.4]}>
+                <group rotation-y={Math.PI * 0.125} receiveShadow>
+                    <Scene />
                 </group>
+                <group
+                    position={[1.25, 0.053, 0.75]}
+                    scale={0.6}
+                    rotation-x={-Math.PI * 0.5}
+                    rotation-z={-Math.PI * 0.375}
+                >
+                    <Avatar />
+                </group>
+            </group>
         </Canvas>
     );
 }

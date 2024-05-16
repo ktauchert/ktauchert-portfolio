@@ -1,5 +1,6 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import LoadingContextProvider from "@/context/LoadingContext";
+import LanguageContextProvider from "@/context/LoadingContext";
 import { Montserrat, Space_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -18,20 +19,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
+        <LanguageContextProvider>
             <html lang="en" className={montserat.className}>
-                <body className=" text-zinc-100 antialiased selection:bg-cyan-300 selection:text-cyan-900">
+                <body className=" text-zinc-100 antialiased selection:bg-cyan-300 selection:text-cyan-950 overflow-x-hidden">
                     {/* uses bg-cyan-900 */}
                     <div className="fixed top-0 h-full w-full -z-10">
                         <div
                             id="background"
-                            className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-900 bg-[radial-gradient(ellipse_50%_70%_at_50%_-10%,rgba(22,78,99,0.4),rgba(255,255,255,0))]"
+                            className=" top-0 z-[-2] h-full w-full bg-neutral-900 bg-[radial-gradient(ellipse_50%_70%_at_50%_-10%,rgba(22,78,99,0.4),rgba(255,255,255,0))]"
                         ></div>
                     </div>
                     <header>
                         <Navbar />
                     </header>
-                    <main className="max-w-[1280px] m-auto">{children}</main>
+                    <main className="max-w-[1280px] lg:m-auto px-5">
+                        {children}
+                    </main>
+                    <Footer />
                 </body>
             </html>
+        </LanguageContextProvider>
     );
 }

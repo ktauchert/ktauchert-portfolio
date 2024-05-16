@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RiReactjsLine } from "react-icons/ri";
 import { RiNodejsLine } from "react-icons/ri";
 import { RiNextjsLine } from "react-icons/ri";
@@ -11,10 +11,13 @@ import { RiFirebaseLine } from "react-icons/ri";
 import { DiPhp } from "react-icons/di";
 import { motion } from "framer-motion";
 import { iconVariant } from "./helper/motion";
+import { LanguageContext } from "@/context/LoadingContext";
+import { technologies } from "@/data/technologies";
 
 function Technologies() {
+    const {language} = useContext(LanguageContext)
     return (
-        <section id="technologies" className="max-w-[1280px] h-full w-full border-b border-zinc-600 pb-16 mx-auto ">
+        <section id="technologies" className=" h-full w-full mx-auto my-10">
             <motion.h2
                 whileInView={{
                     y: 0,
@@ -27,9 +30,9 @@ function Technologies() {
                 transition={{
                     duration: 1.5,
                 }}
-                className="my-20 text-center text-4xl text-orange-600 text-bold uppercase tracking-wider"
+                className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20"
             >
-                Technologies
+                {technologies[language]}
             </motion.h2>
             <motion.div
                 whileInView={{
@@ -136,6 +139,7 @@ function Technologies() {
                     <DiPhp className="text-6xl text-[#fff] font-thin" />
                 </motion.div>
             </motion.div>
+            <div className="w-1/2 h-1 border-b mt-20 border-dashed border-zinc-600 mx-auto"></div>
         </section>
     );
 }

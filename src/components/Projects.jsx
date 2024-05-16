@@ -2,26 +2,27 @@ import { projects } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { LanguageContext } from "@/context/LoadingContext";
 
 function Projects() {
+    const { language } = useContext(LanguageContext);
     return (
-        <section
-            id="projects"
-            className="max-w-[1280px] h-full w-full border-b border-zinc-600 pb-16 mx-auto "
-        >
-            <h2 className="my-20 text-center text-4xl text-orange-600 text-bold uppercase tracking-wider">
-                Projects
+        <section id="projects" className=" h-full w-fullpb-16 mx-auto my-10">
+            <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
+                {projects.title[language]}
             </h2>
             <div className="flex flex-wrap justify-center">
-                {projects.map((project, index) => (
+                {projects.projects.map((project, index) => (
                     <motion.div
+                        key={`project-${index}`}
                         whileInView={{
                             opacity: 1,
-                            y: 0,
+                            x: 0,
                         }}
                         initial={{
                             opacity: 0,
-                            y: 300,
+                            x: 100,
                         }}
                         transition={{
                             duration: index + 1,
@@ -45,7 +46,7 @@ function Projects() {
                             </Link>
                         </div>
                         <div className="body w-full my-3 text-justify">
-                            {project.description}
+                            {project.description[language]}
                         </div>
                         <div className="footer w-full h-full">
                             {project.stack.map((stack, index) => (
@@ -57,6 +58,7 @@ function Projects() {
                     </motion.div>
                 ))}
             </div>
+            <div className="w-1/2 h-1 border-b border-dashed border-zinc-600 mx-auto"></div>
         </section>
     );
 }

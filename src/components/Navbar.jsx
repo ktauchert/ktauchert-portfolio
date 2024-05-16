@@ -9,9 +9,11 @@ import { motion } from "framer-motion";
 function Navbar() {
     return (
         <nav className="flex h-[60px] w-full">
-            <div className="flex max-w-[1280px] m-auto w-full justify-between items-center mx-auto">
-                <div className="flex justify-center items-center">
-                    <Cat scale={0.6} />
+            <div className="flex max-w-[1280px] m-auto w-full h-full justify-between items-center mx-auto">
+                <div className="flex justify-center items-center h-full">
+                    <Link href="/">
+                        <Cat id="brand-icon" scale={0.6} />
+                    </Link>
                     <span
                         id="brand-name"
                         className="text-xl text-white tracking-wide hidden lg:block"
@@ -21,7 +23,7 @@ function Navbar() {
                 </div>
                 <div
                     id="social-links"
-                    className="flex items-center justify-end text-4xl gap-4 text-zinc-100"
+                    className="flex items-center justify-end text-4xl gap-4 text-zinc-100 mr-5"
                 >
                     <Link
                         href={

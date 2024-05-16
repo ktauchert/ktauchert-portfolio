@@ -1,17 +1,20 @@
 'use client';
 import React, { createContext,  useState } from 'react'
 
-export const LoadingContext = createContext()
+export const LanguageContext = createContext()
 
-function LoadingContextProvider({children}) {
-    const [loaded, setLoaded] = useState(false);
-    const [progress, setProgress] = useState(0);
+function LanguageContextProvider({children}) {
+    const [language, setLanguage] = useState('en');
 
   return (
-    <LoadingContext.Provider>
+    <LanguageContext.Provider
+      value={{
+        language, setLanguage
+      }}
+    >
         {children}
-    </LoadingContext.Provider>
+    </LanguageContext.Provider>
   )
 }
 
-export default LoadingContextProvider
+export default LanguageContextProvider;
