@@ -29,13 +29,13 @@ function Hero() {
     }, [progress]);
 
     return (
-        <section className=" w-full h-full">
+        <section className="w-full h-full">
             <div
                 id="hero-container"
-                className="flex flex-wrap lg:flex-row flex-col items-center justify-center my-10"
+                className="flex flex-wrap lg:flex-row flex-col items-center justify-center my-10 w-full overflow-hidden"
             >
                 <div id="hero-text-wrapper" className="w-full lg:w-1/2">
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="flex flex-col items-center lg:items-start w-full">
                         <motion.h1
                             variants={container(0)}
                             initial="hidden"

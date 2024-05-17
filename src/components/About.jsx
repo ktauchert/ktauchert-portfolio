@@ -6,16 +6,16 @@ import { useContext } from "react";
 import { LanguageContext } from "@/context/LoadingContext";
 
 function About() {
-    const {language} = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
     return (
-        <section className="h-full border-zinc-600 mx-auto px-5 my-10">
+        <section className="h-full border-zinc-600 mx-auto px-5 my-10 w-full">
             <h2 className="text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
                 {about[language].title[0]}{" "}
                 <span className="text-orange-400">
                     {about[language].title[1]}
                 </span>
             </h2>
-            <div className="flex flex-wrap justify-center items-center">
+            <div className="flex flex-wrap justify-center items-center w-full overflow-hidden">
                 <motion.div
                     whileInView={{
                         x: 1,

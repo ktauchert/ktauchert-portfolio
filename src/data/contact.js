@@ -1,4 +1,4 @@
 export const contact = {
-    de: { title: 'Kontaktiere Mich',name: "Karsten Tauchert", email: "developer@ktauchert.de" },
-    en: { title: 'Contact Me', name: "Karsten Tauchert", email: "developer@ktauchert.de" },
+    de: { title: 'Kontaktiere Mich',name: "Karsten Tauchert", email: "Schreib Mir" },
+    en: { title: 'Contact Me', name: "Karsten Tauchert", email: "Write Me" },
 };

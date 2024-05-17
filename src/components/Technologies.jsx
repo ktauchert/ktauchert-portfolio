@@ -17,7 +17,7 @@ import { technologies } from "@/data/technologies";
 function Technologies() {
     const {language} = useContext(LanguageContext)
     return (
-        <section id="technologies" className=" h-full w-full mx-auto my-10">
+        <section id="technologies" className=" h-full w-full mx-auto my-10 overflow-hidden">
             <motion.h2
                 whileInView={{
                     y: 0,

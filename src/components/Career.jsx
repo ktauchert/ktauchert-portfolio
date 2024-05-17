@@ -9,7 +9,7 @@ function Career() {
     return (
         <section
             id="career-experience"
-            className="mx-auto px-5 h-full text-lg my-10"
+            className="mx-auto px-5 h-full text-lg my-10 w-full overflow-hidden"
         >
             <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
                 Experience

@@ -43,7 +43,11 @@ export default function Home() {
                 <Link href="#brand-icon">
                     <RiArrowUpWideFill />
                 </Link>
-                <button title="Change Language" className="ml-1" onClick={handleLangButton}>
+                <button
+                    title="Change Language"
+                    className="ml-1"
+                    onClick={handleLangButton}
+                >
                     <Flag country={language === "de" ? "US" : "DE"} />
                 </button>
             </div>

@@ -8,11 +8,11 @@ import { LanguageContext } from "@/context/LoadingContext";
 function Projects() {
     const { language } = useContext(LanguageContext);
     return (
-        <section id="projects" className=" h-full w-fullpb-16 mx-auto my-10">
+        <section id="projects" className=" h-full w-full pb-16 mx-auto my-10 overflow-hidden">
             <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
                 {projects.title[language]}
             </h2>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center w-full overflow-hidden">
                 {projects.projects.map((project, index) => (
                     <motion.div
                         key={`project-${index}`}

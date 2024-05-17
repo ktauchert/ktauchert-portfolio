@@ -8,9 +8,9 @@ import { RiAccountCircleLine } from "react-icons/ri";
 import { RiDownload2Line } from "react-icons/ri";
 
 function Contact() {
-    const {language} = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
     return (
-        <section id="contact" className=" h-full w-ful mx-auto px-5 my-16">
+        <section id="contact" className=" h-full w-full mx-auto px-5 my-16 overflow-hidden">
             <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-10">
                 {contact[language].title}
             </h2>
@@ -23,7 +23,7 @@ function Contact() {
                         </span>
                     </p>
                     <p className="my-3">
-                        <span className="text-xl hover:text-orange-600 text-cyan-600">
+                        <span className="text-xl hover:text-orange-600 text-cyan-600 break-words">
                             <Link
                                 href={
                                     "mailto:developer@ktauchert.de?subject=Nachricht%20vom%20Portfolio&body=Hallo%20Karsten%2C%0D%0A%0D%0A"
@@ -33,7 +33,9 @@ function Contact() {
                                     className="inline mr-10"
                                     title="E-Mail"
                                 />
-                                {contact[language].email}
+                                <span className="">
+                                    {contact[language].email}
+                                </span>
                             </Link>
                         </span>
                     </p>
