@@ -17,34 +17,43 @@ import { technologies } from "@/data/technologies";
 function Technologies() {
     const {language} = useContext(LanguageContext)
     return (
-        <section id="technologies" className=" h-full w-full mx-auto my-10 overflow-hidden">
+        <section
+            id="technologies"
+            className=" h-full w-full mx-auto my-10 overflow-hidden"
+        >
             <motion.h2
-                whileInView={{
-                    y: 0,
-                    opacity: 1,
-                }}
-                initial={{
-                    y: -100,
-                    opacity: 0,
-                }}
-                transition={{
-                    duration: 1.5,
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 1, delay: 0 }}
+                viewport={{ once: true }}
+                variants={{
+                    visible: {
+                        y: 0,
+                        opacity: 1,
+                    },
+                    hidden: {
+                        y: -50,
+                        opacity: 0,
+                    },
                 }}
                 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20"
             >
                 {technologies[language]}
             </motion.h2>
             <motion.div
-                whileInView={{
-                    x: 0,
-                    opacity: 1,
-                }}
-                initial={{
-                    x: -100,
-                    opacity: 0,
-                }}
-                transition={{
-                    duration: 1.5,
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 1, delay: 0 }}
+                viewport={{ once: true }}
+                variants={{
+                    visible: {
+                        x: 0,
+                        opacity: 1,
+                    },
+                    hidden: {
+                        x: -50,
+                        opacity: 0,
+                    },
                 }}
                 className="flex flex-wrap items-center justify-center gap-4"
             >

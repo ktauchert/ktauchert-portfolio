@@ -19,9 +19,7 @@ function Hero() {
     const { progress } = useProgress();
     const [loaded, setLoaded] = useState(false);
 
-    const {language} = useContext(LanguageContext);
-    console.log(language);
-
+    const { language } = useContext(LanguageContext);
     useEffect(() => {
         if (progress >= 100) {
             setLoaded(true);
@@ -29,7 +27,7 @@ function Hero() {
     }, [progress]);
 
     return (
-        <section className="w-full h-full">
+        <section className="w-full h-full mx-5">
             <div
                 id="hero-container"
                 className="flex flex-wrap lg:flex-row flex-col items-center justify-center my-10 w-full overflow-hidden"
@@ -68,7 +66,15 @@ function Hero() {
                             animate="visible"
                             id="hero-text"
                         >
-                            {hero[language].text}
+                            <h3 className="text-xl mb-2">
+                                {hero[language].title}
+                            </h3>
+                            {hero[language].text.map((text, idx) => (
+                                <>
+                                    <p key={`hero-text-${idx}`}>{text}</p>
+                                    <br></br>
+                                </>
+                            ))}
                         </motion.p>
                     </div>
                 </div>

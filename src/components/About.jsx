@@ -17,15 +17,20 @@ function About() {
             </h2>
             <div className="flex flex-wrap justify-center items-center w-full overflow-hidden">
                 <motion.div
-                    whileInView={{
-                        x: 1,
-                        opacity: 1,
-                    }}
-                    initial={{
-                        x: -50,
-                        opacity: 0,
-                    }}
+                    initial="hidden"
+                    whileInView="visible"
                     transition={{ duration: 1, delay: 0 }}
+                    viewport={{ once: true }}
+                    variants={{
+                        visible: {
+                            x: 0,
+                            opacity: 1,
+                        },
+                        hidden: {
+                            x: -50,
+                            opacity: 0,
+                        },
+                    }}
                     className="w-full lg:w-1/3 flex justify-center items-center mb-20"
                 >
                     <Image
@@ -35,20 +40,28 @@ function About() {
                     />
                 </motion.div>
                 <motion.div
-                    whileInView={{
-                        x: 0,
-                        opacity: 1,
-                    }}
-                    initial={{
-                        x: 50,
-                        opacity: 0,
-                    }}
+                    initial="hidden"
+                    whileInView="visible"
                     transition={{ duration: 1, delay: 0 }}
+                    viewport={{ once: true }}
+                    variants={{
+                        visible: {
+                            x: 0,
+                            opacity: 1,
+                        },
+                        hidden: {
+                            x: 50,
+                            opacity: 0,
+                        },
+                    }}
                     className="w-full lg:w-2/3"
                 >
                     <div className="flex flex-col">
                         {about[language].text.map((paragraph, idx) => (
-                            <p key={`par-${idx}`}>{paragraph}</p>
+                            <>
+                                <p key={`par-${idx}`}>{paragraph}</p>
+                                <br></br>
+                            </>
                         ))}
                     </div>
                 </motion.div>

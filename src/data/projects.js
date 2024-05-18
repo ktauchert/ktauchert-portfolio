@@ -44,7 +44,7 @@ export const projects = {
         {
             title: "iOS-Werkstatt-App",
             year: "2018/19",
-            link: "#",
+            link: null,
             image: dummyPicture,
             description: {
                 de: "Entwicklung einer App zur Durchführung und Analyse eines Montageprozesses. Scannen eines Barcodes für Motageteile und zetiliche Überwachung der einzelnen Schritte erfolgten mit der App.",

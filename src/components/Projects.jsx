@@ -8,7 +8,10 @@ import { LanguageContext } from "@/context/LoadingContext";
 function Projects() {
     const { language } = useContext(LanguageContext);
     return (
-        <section id="projects" className=" h-full w-full pb-16 mx-auto my-10 overflow-hidden">
+        <section
+            id="projects"
+            className=" h-full w-full mx-auto my-10 overflow-hidden"
+        >
             <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
                 {projects.title[language]}
             </h2>
@@ -16,36 +19,46 @@ function Projects() {
                 {projects.projects.map((project, index) => (
                     <motion.div
                         key={`project-${index}`}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                        }}
-                        initial={{
-                            opacity: 0,
-                            x: 100,
-                        }}
+                        initial="hidden"
+                        whileInView="visible"
                         transition={{
                             duration: index + 1,
                         }}
-                        className="w-[360px] mx-3 mb-10"
+                        viewport={{ once: true }}
+                        variants={{
+                            visible: {
+                                x: 0,
+                                opacity: 1,
+                            },
+                            hidden: {
+                                x: 100,
+                                opacity: 0,
+                            },
+                        }}
+                        className="lg:min-w-[500px] lg:max-w-[40%] sm:w-[90%] md:max-w-[40%] mx-3 mb-16"
                     >
                         <div className="header w-full   text-center text-2xl p-2 text-cyan-600 font-bold rounded-lg mb-5">
                             <h3>{project.title}</h3>
                         </div>
-                        <div className="image w-full h-[150px] overflow-hidden rounded-lg">
+                        <div className="image w-full h-[200px] overflow-hidden rounded-lg">
                             <Image src={project.image ?? ""} />
                         </div>
                         <div className="date my-3">
-                            <span className="italic">{project.year}</span> -{" "}
-                            <Link
-                                href={project.link}
-                                target="_blank"
-                                className="text-orange-400 hover:text-cyan-500"
-                            >
-                                Projekt-Link
-                            </Link>
+                            <span className="italic">{project.year}</span>{" "}
+                            {project.link ? (
+                                <>
+                                    -{" "}
+                                    <Link
+                                        href={project.link}
+                                        target="_blank"
+                                        className="text-orange-400 hover:text-cyan-500"
+                                    >
+                                        Projekt-Link
+                                    </Link>
+                                </>
+                            ) : null}
                         </div>
-                        <div className="body w-full my-3 text-justify">
+                        <div className="body w-full my-3 text-justify hyphens-auto">
                             {project.description[language]}
                         </div>
                         <div className="footer w-full h-full">

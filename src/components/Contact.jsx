@@ -10,19 +10,16 @@ import { RiDownload2Line } from "react-icons/ri";
 function Contact() {
     const { language } = useContext(LanguageContext);
     return (
-        <section id="contact" className=" h-full w-full mx-auto px-5 my-16 overflow-hidden">
+        <section
+            id="contact"
+            className=" h-full w-full mx-auto px-5 my-16 overflow-hidden"
+        >
             <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-10">
                 {contact[language].title}
             </h2>
-            <div className="flex flex-wrap justify-center items-center">
-                <div className="mx-auto">
-                    <p title="Name">
-                        <span className="text-2xl">
-                            <RiAccountCircleLine className="inline mr-10" />
-                            {contact[language].name}
-                        </span>
-                    </p>
-                    <p className="my-3">
+            <div className="">
+                <div className="flex flex-wrap justify-center items-center">
+                    <p className="lg:w-1/2 w-full flex justify-center mb-5">
                         <span className="text-xl hover:text-orange-600 text-cyan-600 break-words">
                             <Link
                                 href={
@@ -30,7 +27,7 @@ function Contact() {
                                 }
                             >
                                 <RiMailLine
-                                    className="inline mr-10"
+                                    className="inline mr-2"
                                     title="E-Mail"
                                 />
                                 <span className="">
@@ -39,7 +36,7 @@ function Contact() {
                             </Link>
                         </span>
                     </p>
-                    <p>
+                    <p className="lg:w-1/2 w-full flex justify-center">
                         <span className="text-xl">
                             <Link
                                 className="hover:text-orange-600 text-cyan-600"
@@ -51,7 +48,7 @@ function Contact() {
                                 title="Download CV"
                             >
                                 <RiDownload2Line
-                                    className="inline mr-10 "
+                                    className="inline mr-2"
                                     title="CV-Download"
                                 />
                                 Download CV

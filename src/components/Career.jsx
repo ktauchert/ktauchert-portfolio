@@ -12,7 +12,7 @@ function Career() {
             className="mx-auto px-5 h-full text-lg my-10 w-full overflow-hidden"
         >
             <h2 className=" text-center text-4xl text-orange-600 text-bold uppercase tracking-wider my-20">
-                Experience
+                {experiences[language].title}
             </h2>
             <div className="experience-container">
                 {experiences[language].experiences.map((experience, index) => (
@@ -29,16 +29,19 @@ function Career() {
                             </p>
                         </div>
                         <motion.div
-                            whileInView={{
-                                x: 0,
-                                opacity: 1,
-                            }}
-                            initial={{
-                                x: 50,
-                                opacity: 0,
-                            }}
-                            transition={{
-                                duration: 1.5,
+                            initial="hidden"
+                            whileInView="visible"
+                            transition={{ duration: 1.5, delay: 0 }}
+                            viewport={{ once: true }}
+                            variants={{
+                                visible: {
+                                    x: 0,
+                                    opacity: 1,
+                                },
+                                hidden: {
+                                    x: 100,
+                                    opacity: 0,
+                                },
                             }}
                             className="w-full lg:w-3/4"
                         >
@@ -76,7 +79,6 @@ function Career() {
                                 ))}
                             </p>
                         </motion.div>
-                        
                     </article>
                 ))}
             </div>
