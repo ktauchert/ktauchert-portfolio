@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <LanguageContextProvider>
-            <html lang="en" className={montserat.className}>
+            <html lang="en" className={`${montserat.className} scrollbar-thin scrollbar-thumb-cyan-600 scrollbar-track-[#171717] h-32 overflow-y-scroll`}>
                 <body className=" text-zinc-100 antialiased selection:bg-cyan-300 selection:text-cyan-950 overflow-x-hidden">
                     {/* uses bg-cyan-900 */}
                     <div className="fixed top-0 h-full w-full -z-10">
