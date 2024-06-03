@@ -1,25 +1,39 @@
 export const about = {
-    de: {
-        title: ["Über", "Mich"],
-        text: [
-            "Ich bin ein Entwickler mit einer Leidenschaft dafür, Ideen in digitale Wunder zu verwandeln. Meine Reise begann an der Universität Potsdam, wo ich Apps und Tools für bahnbrechende Forschungsprojekte entwickelte, die von Gamification-Web-Apps bis hin zu Tutorials im Business Process Management reichten. Diese frühe Erfahrung legte ein solides Fundament für meine Karriere, indem sie Innovation mit praktischen Fähigkeiten verband.",
-            "Derzeit bin ich bei der koviko GmbH als Webentwickler und Anwendungskonsulent tätig. Hier führe ich agile Transformationen durch, initiiere dynamische Qualitätsmanagement-Teams und biete erstklassigen Kundenservice. Diese Erfahrungen haben meine Führungsfähigkeiten geschärft und mein Verständnis für Kundenbedürfnisse vertieft.",
-            "Unterwegs habe ich an faszinierenden Forschungsprojekten wie Manuthetics, Open-Darkness und ASiK teilgenommen. Diese Projekte haben es mir ermöglicht, Produktionslinien zu simulieren, Selbstbewertungs-Tools zu entwickeln und Ideenplattformen zu gamifizieren, wodurch ich meine technischen und kreativen Horizonte weiter erweitert habe.",
-            "Während ich verschiedene Tools wie React, NextJS, ThreeJS und Blender (oder Yii) nutze, um meine Projekte zum Leben zu erwecken, bleibt mein Fokus auf der innovativen Reise und der Wirkung meiner Arbeit.",
-            "Egal, ob es darum geht, Code zu schreiben oder die Zukunft der Technologie zu gestalten, ich bin Ihr Ansprechpartner.",
-            "Lassen Sie uns gemeinsam den digitalen Bereich erobern!",
-        ],
-    },
+  de: {
+    title: ["Über", "Mich"],
+    text: [
+        `<span className="text-xl font-bold"><strong>Hintergrund:</strong></span><br>
+        Mein Fundament wurde an der Universität Potsdam gelegt, wo ich sechs Jahre lang für die Entwicklung von Software und Apps für Forschungsprojekte verantwortlich war und gleichzeitig Tutorien gab. In dieser Zeit habe ich GUIs, komplexe Maschinensteuerungen und eine komplette Gamification-App entwickelt.`,
+        ` Bei der koviko GmbH konnte ich meine Fähigkeiten weiter ausbauen und mein Wissen um Kundenanforderungen vertiefen. Der Aufbau meines Qualitätsmanagement-Teams und die komplette Neuentwicklung des bestehenden Themes der Unternehmenssoftware haben meine technischen und organisatorischen Fähigkeiten erweitert. Der direkte Umgang mit Kunden im Support und als Anwendungsberater hat meinen Blick für Kundenbedürfnisse geschärft.`,
+        `<span className="text-xl font-bold"><strong>Interessen:</strong></span><br>
+        Ich suche stets neue Herausforderungen, um innovative Wege in der Entwicklung zu erkunden. Derzeit bilde ich mich weiter in den Bereichen 3D-Modellierung, Prototyping mit Figma und der Entwicklung von Web-3D-Anwendungen mit Three.js.`,
+        `<span className="text-2xl font-bold">Kurz:</span><br>
+        Ich bin ein vielseitiger Allrounder.`, 
+        `<span className="text-2xl font-bold">Skills:</span>
+        <ul>
+          <li>Sprachen: Englisch, JavaScript, PHP, Python </li>
+          <li>Frameworks: ReactJS, TailwindCSS, Yii, Bootstrap</li>
+          <li>Tools: Git, VSCode, PHPStorm, NodeJS, LAMP</li>
+        </ul>`,
+    ],
+  },
 
-    en: {
-        title: ["About", "Me"],
-        text: [
-            "I'm a developer with a passion for turning ideas into digital wonders. My journey began at the University of Potsdam, where I developed apps and tools for groundbreaking research projects, ranging from gamification web apps to tutorials in Business Process Management. This early experience laid a solid foundation for my career, blending innovation with practical skills.",
-            "Currently, at koviko GmbH, I've taken on the roles of Web Developer and Application Consultant. Here, I lead agile transformations, initiate dynamic quality management teams, and provide top-notch customer care. These experiences have honed my leadership skills and deepened my understanding of client needs.",
-            "Along the way, I've engaged in fascinating research projects like Manuthetics, Open-Darkness, and ASiK. These projects have allowed me to simulate production lines, develop self-assessment tools, and gamify idea platforms, further expanding my technical and creative horizons.",
-            "While I use various tools such as React, NextJS, ThreeJS and Blender (or Yii) to bring my projects to life, my focus remains on the innovative journey and the impact of my work.",
-            "Whether it's crafting code or shaping the future of technology, I'm your go-to developer.",
-            "Let's code, create, and conquer the digital realm together!",
-        ],
-    },
+  en: {
+    title: ["About", "Me"],
+    text: [
+        `<span className="text-xl font-bold"><strong>Background:</strong></span><br>
+        My foundation was laid at the University of Potsdam, where I was responsible for the development of software and apps for research projects for six years while also tutoring. During this time, I developed GUIs, complex machine controls, and a complete gamification app.`,
+        ` At koviko GmbH, I was able to further enhance my skills and deepen my knowledge of customer requirements. Building my quality management team and completely redeveloping the existing theme of the company software expanded my technical and organizational skills. Direct interaction with customers in support and as an application consultant sharpened my focus on customer needs.`,
+        `<span className="text-xl font-bold"><strong>Interests:</strong></span><br>
+        I am always looking for new challenges to explore innovative paths in development. Currently, I am furthering my education in 3D modeling, prototyping with Figma, and developing web-3D applications with Three.js.`,
+        `<span className="text-2xl font-bold">In Short:</span><br>
+        I am a versatile all-rounder.`,
+        `<span className="text-2xl font-bold">Skills:</span>
+        <ul>
+          <li>Languages: English, JavaScript, PHP, Python</li>
+          <li>Frameworks: ReactJS, TailwindCSS, Yii, Bootstrap</li>
+          <li>Tools: Git, VSCode, PHPStorm, NodeJS, LAMP</li>
+        </ul>`,
+    ]
+  },
 };

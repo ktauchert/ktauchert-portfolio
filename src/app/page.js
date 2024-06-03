@@ -12,45 +12,44 @@ import Flag from "react-flagkit";
 import { RiArrowUpWideFill } from "react-icons/ri";
 
 export default function Home() {
-    const { language, setLanguage } = useContext(LanguageContext);
-    const { flagIcon, setFlagIcon } = useState("");
+  const { language, setLanguage } = useContext(LanguageContext);
 
-    const handleLangButton = () => {
-        if (language === "de") {
-            setLanguage("en");
-        } else {
-            setLanguage("de");
-        }
-    };
+  const handleLangButton = () => {
+    if (language === "de") {
+      setLanguage("en");
+    } else {
+      setLanguage("de");
+    }
+  };
 
-    return (
-        <>
-            {/* Hero Section */}
-            <Hero />
+  return (
+    <div className="">
+      {/* Hero Section */}
+      <Hero />
 
-            <About />
+      <About />
 
-            <Technologies />
+      <Technologies />
 
-            <Career />
+      <Career />
 
-            {/* Projects */}
-            <Projects />
+      {/* Projects */}
+      <Projects />
 
-            <Contact />
+      <Contact />
 
-            <div className="fixed bottom-3 right-3 text-4xl rounded-full text-orange-600">
-                <Link href="#brand-icon">
-                    <RiArrowUpWideFill />
-                </Link>
-                <button
-                    title="Change Language"
-                    className="ml-1"
-                    onClick={handleLangButton}
-                >
-                    <Flag country={language === "de" ? "US" : "DE"} />
-                </button>
-            </div>
-        </>
-    );
+      <div className="fixed bottom-3 right-3 text-4xl rounded-full text-orange-600">
+        <Link href="#brand-icon">
+          <RiArrowUpWideFill />
+        </Link>
+        <button
+          title="Change Language"
+          className="ml-1"
+          onClick={handleLangButton}
+        >
+          <Flag country={language === "de" ? "US" : "DE"} />
+        </button>
+      </div>
+    </div>
+  );
 }
