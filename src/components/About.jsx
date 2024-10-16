@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { about } from "@/data/about";
 import { useContext } from "react";
 import { LanguageContext } from "@/context/LoadingContext";
+import HTMLReactParser from "html-react-parser";
 
 function About() {
   const { language } = useContext(LanguageContext);

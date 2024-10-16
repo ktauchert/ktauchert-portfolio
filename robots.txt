@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://ktauchert.de/sitemap.xml
+
+Disallow: /games/
+Disallow: /private/
