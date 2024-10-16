@@ -32,13 +32,19 @@ const Loading = ({ progress }) => {
 function Hero() {
   const { progress } = useProgress();
   const [loaded, setLoaded] = useState(false);
+  const [showScene, setShowScene] = useState(false);
 
   const { language } = useContext(LanguageContext);
   useEffect(() => {
     if (progress >= 100) {
       setLoaded(true);
     }
-  }, [progress]);
+    if (loaded) {
+      setTimeout(() => {
+        setShowScene(true);
+      }, 1500);
+    }
+  }, [progress, loaded]);
 
   return (
     <section className="w-full h-full mb-20">
@@ -101,11 +107,11 @@ function Hero() {
             animate={{ x: 0, opacity: 1 }}
             transition={{
               duration: 1,
-              delay: 1,
+              delay: 4,
             }}
           >
             <Suspense fallback={null}>
-              {loaded ? (
+              {loaded && showScene ? (
                 // <div>Suspens not</div>
                 <Experience />
               ) : (
